@@ -1,32 +1,33 @@
-import React from 'react';
-import StudentList from './StudentList';
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student List</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-const studentList = [
-  {
-    id: 120,
-    firstName: "Naresh",
-    lastName: 'Kumar',
-    course: 'MECHANICAL',
-  },
-  {
-    id: 121,
-    firstName: "Muthu",
-    lastName: 'Ganesh',
-    course: 'CIVIL',
-  },
-  {
-    id: 122,
-    firstName: "Ritesh",
-    lastName: 'Arya',
-    course: 'MECHANICAL',
-  },
-];
+  <div class="container">
+    <label for="courseFilter">Course Filter:</label>
+    <select id="courseFilter" onchange="filterStudents()">
+      <option value="ALL">ALL</option>
+    </select>
 
-const App = () => (
-  <div>
-    <h1><center>Student Management</center></h1>
-    <StudentList studentList={studentList} />
+    <table>
+      <thead>
+        <tr>
+          <th>Student Id</th>
+          <th>Student Name</th>
+          <th>Course</th>
+        </tr>
+      </thead>
+      <tbody id="studentTableBody">
+        <!-- Students will be populated here -->
+      </tbody>
+    </table>
   </div>
-);
 
-export default App;
+  <script src="script.js"></script>
+</body>
+</html>
